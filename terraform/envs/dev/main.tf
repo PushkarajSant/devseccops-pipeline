@@ -18,6 +18,6 @@ module "ecs" {
   public_subnets    = module.network.public_subnet_ids
   private_subnets   = module.network.private_subnet_ids
   app_name          = "devsecops-app"
-  container_image   = "REPLACE_WITH_ECR_IMAGE"
+  container_image   = "${module.ecs.ecr_url}:latest"
   container_port    = 8080
 }
