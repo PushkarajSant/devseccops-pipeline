@@ -17,15 +17,3 @@ terraform {
   #   dynamodb_table = "terraform-state-lock"
   # }
 }
-
-provider "aws" {
-  region = var.aws_region
-
-  default_tags {
-    tags = {
-      Environment = var.environment
-      ManagedBy   = "Terraform"
-      Project     = "ECS-Secure-Infrastructure"
-    }
-  }
-}
